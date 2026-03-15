@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>KNUTICE 1.7.0 업데이트</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        knutice: '#5856D6',
+                        'knutice-light': '#EEEDFA',
+                    },
+                    fontFamily: {
+                        sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            overscroll-behavior-y: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* 스크롤바 숨기기 스타일 (필요시 사용, 현재 중앙 정렬 구조에서는 미사용) */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .device-frame {
+            border: 10px solid #18181b; 
+            border-radius: 3rem; 
+            overflow: hidden;
+            background-color: #000000;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            aspect-ratio: 9 / 19.5;
+            width: 100%;
+        }
+
+        .device-frame::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: 2.5rem;
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+            pointer-events: none;
+        }
+
+        .device-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 antialiased">
+
+    <section class="bg-gray-50 pt-16 pb-12 px-6 text-center">
+        <div class="inline-block bg-knutice-light text-knutice px-4 py-1.5 rounded-full text-sm font-bold mb-4">
+            KNUTICE 1.7.0
+        </div>
+        <h1 class="text-3xl font-extrabold tracking-tight mb-4 leading-snug text-gray-900">
+            학교 생활이 더 편해지는<br/>새로운 기능이 찾아왔어요 🎉
+        </h1>
+        <p class="text-gray-500 text-[17px] leading-relaxed break-keep">
+            AI 요약부터 학식, 열람실 확인까지.<br/>
+            업데이트된 KNUTICE를 소개할게요.
+        </p>
+    </section>
+
+    <section class="bg-white py-16 px-6">
+        <div class="max-w-md mx-auto">
+            <div class="mb-8 text-center">
+                <div class="flex justify-center mb-2">
+                    <span class="bg-knutice text-white text-[11px] font-bold px-2 py-0.5 rounded shadow-sm uppercase">New</span>
+                </div>
+                <h2 class="text-2xl font-extrabold mb-3">한눈에 쏙 들어오는 홈 화면</h2>
+                <p class="text-gray-600 text-[17px] leading-relaxed break-keep">
+                    공지사항 확인은 기본, 이제 홈 화면에서 대시보드 형태로 학식 메뉴와 열람실 현황까지 바로 접근할 수 있어요.
+                </p>
+            </div>
+            <div class="px-6">
+                <div class="device-frame max-w-[280px] mx-auto">
+                    <img src="home.png" alt="새로워진 홈 화면">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray-50 py-16 px-6 border-t border-gray-100">
+        <div class="max-w-md mx-auto">
+            <div class="mb-8 text-center">
+                <div class="flex justify-center mb-2">
+                    <span class="bg-knutice text-white text-[11px] font-bold px-2 py-0.5 rounded shadow-sm uppercase">New</span>
+                </div>
+                <h2 class="text-2xl font-extrabold mb-3">긴 공지사항도 핵심만 쏙!</h2>
+                <p class="text-gray-600 text-[17px] leading-relaxed break-keep">
+                    읽기 바쁜 긴 공지사항은 이제 AI가 요약해 드려요. 중요한 내용만 빠르게 파악하고 시간을 아껴보세요.
+                </p>
+            </div>
+            <div class="px-6">
+                <div class="device-frame max-w-[280px] mx-auto">
+                    <img src="aiSummary.png" alt="AI 공지 요약 기능">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white py-16 px-6 border-t border-gray-100">
+        <div class="max-w-md mx-auto">
+            <div class="mb-8 text-center">
+                <div class="flex justify-center mb-2">
+                    <span class="bg-knutice text-white text-[11px] font-bold px-2 py-0.5 rounded shadow-sm uppercase">New</span>
+                </div>
+                <h2 class="text-2xl font-extrabold mb-3">오늘 학식 뭐지? 앱에서 확인해요</h2>
+                <p class="text-gray-600 text-[17px] leading-relaxed break-keep">
+                    식당 앞까지 갈 필요 없어요. 학생식당부터 교직원식당 메뉴까지 터치 한 번으로 편하게 확인해 보세요.
+                </p>
+            </div>
+            <div class="px-6">
+                <div class="device-frame max-w-[280px] mx-auto">
+                    <img src="meal.png" alt="학식 메뉴 확인">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray-50 py-16 px-4 border-t border-gray-100">
+        <div class="max-w-md mx-auto text-center mb-10">
+            <div class="flex justify-center mb-2">
+                <span class="bg-knutice text-white text-[11px] font-bold px-2 py-0.5 rounded shadow-sm uppercase">New</span>
+            </div>
+            <h2 class="text-2xl font-extrabold mb-3">도서관 빈자리, 헛걸음하지 마세요</h2>
+            <p class="text-gray-600 text-[16px] leading-relaxed break-keep mx-auto">
+                집중 학습 ZONE부터 협업 ZONE까지! 전체 좌석 점유율과 남은 자리 위치를 앱에서 직관적으로 미리 볼 수 있어요.
+            </p>
+        </div>
+
+        <div class="flex justify-center gap-3 md:gap-8 w-full max-w-4xl mx-auto pb-6">
+            <div class="w-[46%] max-w-[280px]">
+                <div class="device-frame">
+                    <img src="roomOcup.png" alt="열람실 점유율 현황">
+                </div>
+            </div>
+            <div class="w-[46%] max-w-[280px]">
+                <div class="device-frame">
+                    <img src="roomSeat.png" alt="열람실 좌석 현황">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white pt-16 pb-24 px-6 border-t border-gray-100 text-center">
+        <div class="max-w-md mx-auto">
+            <h2 class="text-xl font-bold mb-4 text-gray-900">
+                새로운 학기, KNUTICE가 응원할게요!
+            </h2>
+            <div class="bg-gray-50 rounded-2xl p-6 shadow-sm border border-gray-100 mb-6">
+                <p class="text-gray-700 text-[16px] leading-relaxed break-keep mb-3">
+                    특히 이번에 입학하신 <strong>26학번 신입생 여러분</strong>, 진심으로 환영해요! 🎒✨
+                </p>
+                <p class="text-gray-500 text-[15px] leading-relaxed break-keep">
+                    처음이라 낯설고 헷갈리는 공지사항들, 새롭게 단장한 KNUTICE가 훨씬 편하게 챙겨드릴게요. 성공적인 첫 학기를 기원합니다!
+                </p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
